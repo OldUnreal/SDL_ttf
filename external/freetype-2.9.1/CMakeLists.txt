@@ -327,6 +327,9 @@ if (NOT DISABLE_FORCE_DEBUG_POSTFIX)
   set(CMAKE_DEBUG_POSTFIX d)
 endif()
 
+if(NOT MSVC AND NOT APPLE)
+  add_definitions(-fPIC)
+endif()
 
 add_library(freetype
   ${PUBLIC_HEADERS}

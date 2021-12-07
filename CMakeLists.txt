@@ -20,6 +20,10 @@ set(SDL_TTF_INTERFACE_AGE 0)
 set(SDL_TTF_BINARY_AGE 14)
 set(SDL_TTF_VERSION "${SDL_TTF_MAJOR_VERSION}.${SDL_TTF_MINOR_VERSION}.${SDL_TTF_MICRO_VERSION}")
 
+if(NOT MSVC AND NOT APPLE)
+  add_definitions(-fPIC)
+endif()
+
 ##### library generation #####
 add_library(SDL2_ttf SDL_ttf.c SDL_ttf.h)
 target_link_libraries(SDL2_ttf SDL2::SDL2 Freetype::Freetype)
