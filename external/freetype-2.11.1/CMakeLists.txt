@@ -445,6 +445,11 @@ set_target_properties(
   freetype PROPERTIES
     C_VISIBILITY_PRESET hidden)
 
+set_target_properties(
+  freetype PROPERTIES
+  POSITION_INDEPENDENT_CODE ON
+)
+
 target_compile_definitions(
   freetype PRIVATE FT2_BUILD_LIBRARY)
 
